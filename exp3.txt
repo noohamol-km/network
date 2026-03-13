@@ -1,0 +1,283 @@
+1️⃣ Basic Commands
+1. man
+
+Shows manual/help for a command.
+
+mca@MCA04:~/Desktop/linux$ man ls
+
+Sample Output (first lines):
+
+LS(1) User Commands
+NAME
+       ls - list directory contents
+2. pwd
+
+Shows current directory.
+
+mca@MCA04:~/Desktop/linux$ pwd
+
+Output:
+
+/home/mca/Desktop/linux
+3. ls
+
+Lists files and folders.
+
+mca@MCA04:~/Desktop/linux$ ls
+
+Output:
+
+file1.txt  file2.txt  folder1
+4. echo
+
+Prints text.
+
+mca@MCA04:~/Desktop/linux$ echo "Hello Linux"
+
+Output:
+
+Hello Linux
+5. read
+
+Reads user input.
+
+mca@MCA04:~/Desktop/linux$ read name
+Rahul
+mca@MCA04:~/Desktop/linux$ echo $name
+
+Output:
+
+Rahul
+2️⃣ File Viewing
+6. cat
+mca@MCA04:~/Desktop/linux$ cat file1.txt
+
+Output:
+
+Linux is an operating system
+It is open source
+7. more
+mca@MCA04:~/Desktop/linux$ more file1.txt
+
+Output:
+
+Linux is an operating system
+It is open source
+--More--
+8. less
+mca@MCA04:~/Desktop/linux$ less file1.txt
+
+Output (scrollable):
+
+Linux is an operating system
+It is open source
+3️⃣ Directory Navigation
+9. cd
+mca@MCA04:~/Desktop/linux$ cd folder1
+
+Output:
+
+mca@MCA04:~/Desktop/linux/folder1$
+10. mkdir
+mca@MCA04:~/Desktop/linux$ mkdir testdir
+
+Output:
+
+(no output)
+11. find
+mca@MCA04:~/Desktop/linux$ find . -name file1.txt
+
+Output:
+
+./file1.txt
+4️⃣ File & Directory Operations
+12. cp
+mca@MCA04:~/Desktop/linux$ cp file1.txt file3.txt
+
+Output:
+
+(no output)
+
+Files now:
+
+file1.txt file3.txt
+13. mv
+mca@MCA04:~/Desktop/linux$ mv file3.txt newfile.txt
+
+Output:
+
+(no output)
+14. rm
+mca@MCA04:~/Desktop/linux$ rm newfile.txt
+
+Output:
+
+(no output)
+15. tar
+mca@MCA04:~/Desktop/linux$ tar -cvf files.tar file1.txt
+
+Output:
+
+file1.txt
+5️⃣ File Content Processing
+16. wc
+mca@MCA04:~/Desktop/linux$ wc file1.txt
+
+Output:
+
+2 6 45 file1.txt
+
+(lines words characters)
+
+17. head
+mca@MCA04:~/Desktop/linux$ head file1.txt
+
+Output:
+
+Linux is an operating system
+It is open source
+18. tail
+mca@MCA04:~/Desktop/linux$ tail file1.txt
+
+Output:
+
+Linux is an operating system
+It is open source
+19. cut
+mca@MCA04:~/Desktop/linux$ cut -d " " -f1 file1.txt
+
+Output:
+
+Linux
+It
+20. paste
+mca@MCA04:~/Desktop/linux$ paste file1.txt file2.txt
+
+Output:
+
+Linux is an OS    Ubuntu is Linux
+It is open source Debian is stable
+6️⃣ Searching & Expressions
+21. grep
+mca@MCA04:~/Desktop/linux$ grep Linux file1.txt
+
+Output:
+
+Linux is an operating system
+22. expr
+mca@MCA04:~/Desktop/linux$ expr 5 + 3
+
+Output:
+
+8
+7️⃣ Permissions & Ownership
+23. chmod
+mca@MCA04:~/Desktop/linux$ chmod 755 file1.txt
+
+Output:
+
+(no output)
+24. chown
+sudo chown mca:mca file1.txt
+
+Output:
+
+(no output)
+8️⃣ Redirection & Piping
+25. Redirection
+
+Write to file:
+
+echo "Linux commands" > file.txt
+
+Output:
+
+(no output)
+
+Append:
+
+echo "Practice Linux" >> file.txt
+
+File content:
+
+Linux commands
+Practice Linux
+26. Pipe |
+ls | wc
+
+Output:
+
+3 3 25
+9️⃣ User Management
+27. useradd
+sudo useradd student1
+
+Output:
+
+(no output)
+28. passwd
+sudo passwd student1
+
+Output:
+
+Enter new UNIX password:
+Retype new UNIX password:
+password updated successfully
+29. usermod
+sudo usermod -aG sudo student1
+
+Output:
+
+(no output)
+30. userdel
+sudo userdel student1
+
+Output:
+
+(no output)
+🔟 System Monitoring
+31. df
+df -h
+
+Output:
+
+Filesystem      Size  Used Avail Use%
+/dev/sda1       50G   20G   28G   42%
+32. ps
+ps
+
+Output:
+
+PID TTY      TIME CMD
+1234 pts/0   00:00 bash
+5678 pts/0   00:00 ps
+33. top
+top
+
+Output:
+
+top - 10:20:30 up 1:10
+Tasks: 120 total
+Cpu(s): 10% us
+Mem: 2048MB total
+1️⃣1️⃣ Networking
+34. ssh
+ssh user@192.168.1.10
+
+Output:
+
+user@192.168.1.10's password:
+35. scp
+scp file1.txt user@192.168.1.10:/home/user/
+
+Output:
+
+file1.txt 100% 200KB 200KB/s
+36. ssh-keygen
+ssh-keygen
+
+Output:
+
+Generating public/private rsa key pair.
+Enter file in which to save the key:
+/home/mca/.ssh/id_rsa
