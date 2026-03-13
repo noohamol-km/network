@@ -1,0 +1,150 @@
+a) Create directory, file, write content, display it
+mca@MCA04:~/Desktop/linux$ mkdir lab1
+mca@MCA04:~/Desktop/linux$ cd lab1
+mca@MCA04:~/Desktop/linux/lab1$ echo "Welcome to Linux Lab 1" > data.txt
+mca@MCA04:~/Desktop/linux/lab1$ cat data.txt
+Welcome to Linux Lab 1
+
+b) Display last 10 lines and count empty lines
+mca@MCA04:~/Desktop/linux/lab1$ tail -10 data.txt
+Welcome to Linux Lab 1
+
+Linux practice file
+
+End of file
+
+mca@MCA04:~/Desktop/linux/lab1$ grep '^$' data.txt | wc -l
+2
+
+c) Create user, set password, change ownership and permissions
+mca@MCA04:~/Desktop/linux/lab1$ sudo useradd student1
+mca@MCA04:~/Desktop/linux/lab1$ sudo passwd student1
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+
+mca@MCA04:~/Desktop/linux/lab1$ touch test.sh
+mca@MCA04:~/Desktop/linux/lab1$ sudo chown student1 test.sh
+mca@MCA04:~/Desktop/linux/lab1$ chmod 700 test.sh
+
+mca@MCA04:~/Desktop/linux/lab1$ ls -l test.sh
+-rwx------ 1 student1 student1 0 Mar 6 10:10 test.sh
+
+
+II
+a) Create students.txt and search MCA
+mca@MCA04:~/Desktop/linux/lab1$ cat > students.txt
+Rahul MCA
+Anita BCA
+Suresh MCA
+Priya MBA
+^D
+
+mca@MCA04:~/Desktop/linux/lab1$ grep "MCA" students.txt
+Rahul MCA
+Suresh MCA
+b) Copy, rename, delete
+mca@MCA04:~/Desktop/linux/lab1$ cp students.txt backup.txt
+mca@MCA04:~/Desktop/linux/lab1$ mv backup.txt final.txt
+mca@MCA04:~/Desktop/linux/lab1$ rm students.txt
+
+mca@MCA04:~/Desktop/linux/lab1$ ls
+data.txt  final.txt  test.sh
+
+c) Generate SSH key and copy to remote system
+mca@MCA04:~/Desktop/linux/lab1$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/mca/.ssh/id_rsa):
+Your identification has been saved in /home/mca/.ssh/id_rsa
+Your public key has been saved in /home/mca/.ssh/id_rsa.pub
+
+mca@MCA04:~/Desktop/linux/lab1$ ssh-copy-id user@192.168.1.10
+user@192.168.1.10's password:
+Number of key(s) added: 1
+
+mca@MCA04:~/Desktop/linux/lab1$ ssh user@192.168.1.10
+Welcome to Ubuntu
+
+
+III
+a) Count words and lines, display first 5 lines
+mca@MCA04:~/Desktop/linux/lab1$ wc data.txt
+5 12 90 data.txt
+
+mca@MCA04:~/Desktop/linux/lab1$ head -5 data.txt
+Welcome to Linux Lab 1
+Linux practice file
+Line 3
+Line 4
+Line 5
+b) Create files, compress, extract
+mca@MCA04:~/Desktop/linux/lab1$ touch file1.txt file2.txt file3.txt
+
+mca@MCA04:~/Desktop/linux/lab1$ tar -cvf archive.tar file1.txt file2.txt file3.txt
+file1.txt
+file2.txt
+file3.txt
+
+mca@MCA04:~/Desktop/linux/lab1$ mkdir extract_dir
+
+mca@MCA04:~/Desktop/linux/lab1$ tar -xvf archive.tar -C extract_dir
+file1.txt
+file2.txt
+file3.txt
+c) Search lines starting with Error but not containing critical
+mca@MCA04:~/Desktop/linux/lab1$ grep '^Error' log.txt | grep -v "critical"
+Error: Disk space low
+Error: File missing
+
+
+IV
+a) Create file, append content, display
+mca@MCA04:~/Desktop/linux/lab1$ echo "Linux Lab File" > notes.txt
+mca@MCA04:~/Desktop/linux/lab1$ echo "Second line added" >> notes.txt
+
+mca@MCA04:~/Desktop/linux/lab1$ less notes.txt
+Linux Lab File
+Second line added
+b) Change permissions and verify
+mca@MCA04:~/Desktop/linux/lab1$ chmod g+rw final.txt
+
+mca@MCA04:~/Desktop/linux/lab1$ ls -l final.txt
+-rw-rw-r-- 1 mca mca 35 Mar 6 10:25 final.txt
+c) Show processes and disk usage
+mca@MCA04:~/Desktop/linux/lab1$ ps -u mca -f
+UID   PID  PPID  C STIME TTY          TIME CMD
+mca  1254  1200  0 10:30 pts/0    00:00:00 bash
+mca  1300  1254  0 10:31 pts/0    00:00:00 ps -u mca -f
+
+mca@MCA04:~/Desktop/linux/lab1$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1        50G   20G   28G  42% /
+
+
+V
+a) Find all .txt files
+mca@MCA04:~/Desktop/linux/lab1$ find . -name "*.txt" -exec ls -l {} \;
+-rw-r--r-- 1 mca mca 25 Mar 6 10:05 data.txt
+-rw-rw-r-- 1 mca mca 35 Mar 6 10:25 final.txt
+-rw-r--r-- 1 mca mca 15 Mar 6 10:20 notes.txt
+b) Cut first column and paste with another file
+mca@MCA04:~/Desktop/linux/lab1$ cut -d " " -f1 final.txt > col1.txt
+
+mca@MCA04:~/Desktop/linux/lab1$ paste col1.txt notes.txt > output.txt
+
+mca@MCA04:~/Desktop/linux/lab1$ cat output.txt
+Rahul   Linux Lab File
+Suresh  Second line added
+c) Monitor processes and list directory
+mca@MCA04:~/Desktop/linux/lab1$ top
+top - 10:40:00 up 1:20, 1 user, load average: 0.15, 0.10, 0.05
+Tasks: 120 total, 1 running, 119 sleeping
+
+(q pressed to exit)
+
+mca@MCA04:~/Desktop/linux/lab1$ ls -l
+total 24
+-rw-r--r-- 1 mca mca 25 Mar 6 10:05 data.txt
+-rw-rw-r-- 1 mca mca 35 Mar 6 10:25 final.txt
+-rw-r--r-- 1 mca mca 15 Mar 6 10:20 notes.txt
+-rwx------ 1 student1 student1 0 Mar 6 10:10 test.sh

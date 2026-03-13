@@ -1,0 +1,90 @@
+1 Starting Vim/Vi Editor
+2 Saving and Exiting
+mca@MCA03:~/mca/NOOHA/network$ vi file.sh
+Linux is an open source operating system.
+Vi editor is used to edit files in Linux.
+:wq
+
+3 Viewing the File After Saving
+mca@MCA03:~/mca/NOOHA/network$ cat file.sh
+Linux is an open source operating system.
+Vi editor is used to edit files in Linuxmca@MCA14:~$ vim sample.sh
+
+Command 'vim' not found, but can be installed with:
+
+sudo apt install vim         # version 2:8.1.2269-1ubuntu5.31, or
+sudo apt install vim-tiny    # version 2:8.1.2269-1ubuntu5.31
+sudo apt install vim-athena  # version 2:8.1.2269-1ubuntu5.31
+sudo apt install vim-gtk3    # version 2:8.1.2269-1ubuntu5.31
+sudo apt install vim-nox     # version 2:8.1.2269-1ubuntu5.31
+sudo apt install neovim      # version 0.4.3-3
+
+mca@MCA14:~$ vi sample.sh
+mca@MCA14:~$ cat sample.sh
+welcome
+.
+
+4. Pattern Searching
+Linux is an open source operating system.
+Vi editor is used to edit files in Linux.
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+:/Linux
+
+5. Global Search and Replace
+Unix is an open source operating system.
+Vi editor is used to edit files in Unix.
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+:%s/Linux/Unix/g
+
+6.Emacs Editor (Terminal-Based Text Editor)
+mca@MCA03:~/mca/NOOHA/network$ sudo snap install emacs
+[sudo] password for mca: 
+error: This revision of snap "emacs" was published using classic confinement
+       and thus may perform arbitrary system changes outside of the security
+       sandbox that snaps are usually confined to, which may put your system at
+       risk.
+
+Unix is an open source operating system.                                        
+Vi editor is used to edit files in Unix. 
