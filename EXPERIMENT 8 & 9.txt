@@ -1,0 +1,27 @@
+EXPERIMENT 8
+EXPERIMENT 8
+mca@MCA05:~/Desktop/linux/lab1$ chmod +x evenodd.sh
+mca@MCA05:~/Desktop/linux/lab1$ ./evenodd.sh
+Enter a number:
+4
+4 is Even
+
+EXPERIMENT 9
+
+mca@MCA05:~/Desktop/linux/lab1$ chmod +x largest.sh
+mca@MCA05:~/Desktop/linux/lab1$ ./largest.sh
+Enter three numbers:
+4 7 2
+Largest number is: 7$ chmod +x evenodd.sh
+mca@MCA05:~/Desktop/linux/lab1$ ./evenodd.sh
+Enter a number:
+4
+4 is Even
+
+EXPERIMENT 9
+
+mca@MCA05:~/Desktop/linux/lab1$ chmod +x largest.sh
+mca@MCA05:~/Desktop/linux/lab1$ ./largest.sh
+Enter three numbers:
+4 7 2
+Largest number is: 7
