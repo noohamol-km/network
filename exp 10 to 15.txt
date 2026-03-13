@@ -1,0 +1,32 @@
+mca@MCA04:~/Desktop/linux$ chmod +x 1.sh
+mca@MCA04:~/Desktop/linux$ ./1.sh
+Enter a year: 2000
+2000 is a leap year
+
+mca@MCA04:~/Desktop/linux$ chmod +x 2.sh
+mca@MCA04:~/Desktop/linux$ ./2.sh
+Enter a number: 5
+5 is Odd
+
+mca@MCA04:~/Desktop/linux$ chmod +x 3.sh
+mca@MCA04:~/Desktop/linux$ ./3.sh
+Enter first number: 7
+Enter second number: 2
+Enter third number: 4
+7 is the largest number
+
+mca@MCA04:~/Desktop/linux$ chmod +x 4.sh
+mca@MCA04:~/Desktop/linux$ ./4.sh
+Enter n: 4
+Sum of first 4 natural numbers is 10
+
+mca@MCA04:~/Desktop/linux$ chmod +x 5.sh
+mca@MCA04:~/Desktop/linux$ ./5.sh
+Enter a number: 8
+Factorial of 8 is 40320
+
+mca@MCA04:~/Desktop/linux$ chmod +x 6.sh
+mca@MCA04:~/Desktop/linux$ ./6.sh
+Enter number of terms: 7
+Fibonacci Series:
+0 1 1 2 3 5 8
